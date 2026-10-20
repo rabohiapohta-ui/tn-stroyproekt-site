@@ -1,0 +1,22 @@
+/* Motion complements the existing layout; all content is visible without JS. */
+.hero-experience.hero{background:#0e1a26}
+.hero-environment{position:absolute;inset:-28px;z-index:-2;pointer-events:none;background:url('./assets/site/hero-city.webp') center 58%/cover no-repeat;transform:translate3d(0,0,0)}
+.site-header:after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:#f57c00;transform:scaleX(var(--reading-progress,0));transform-origin:left;pointer-events:none}
+.main-nav a{position:relative}.main-nav a:after{content:'';position:absolute;bottom:8px;left:0;right:0;height:1px;background:#f57c00;transform:scaleX(0);transform-origin:left;transition:transform .28s ease}
+.main-nav a:hover:after,.main-nav a[aria-current=location]:after{transform:scaleX(1)}
+.main-nav a[aria-current=location]{color:#ffc18b}
+.direction-links>a{overflow:hidden;transition:background .3s ease}.direction-links>a:after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:#f57c00;transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.direction-links>a:hover:after,.direction-links>a:focus-visible:after{transform:scaleX(1)}
+.direction-links .round-arrow,.hero-services a span,.button>span,.text-link>span{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.direction-links>a:hover .round-arrow,.hero-services a:hover span,.button:hover>span{transform:translate(3px,-3px)}
+.text-link:hover>span{transform:translateY(3px)}
+.case{transition:background .3s ease}.case:hover{background:#e9eef2}
+.case-metrics strong{transform-origin:left bottom}
+.process-steps li{position:relative;--step-progress:0}
+.process-steps li:before{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:#f57c00;transform:scaleX(var(--step-progress));transform-origin:left}
+.process-steps li>span{display:inline-flex;align-items:center;gap:10px}
+.process-steps li>span:before{content:'';width:6px;height:6px;background:#f57c00;border-radius:50%;box-shadow:0 0 0 5px #f57c0014;opacity:var(--step-progress)}
+.material-photo>img,.team-block>figure>img{transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+@media(hover:hover) and (pointer:fine){.material-photo:hover>img,.team-block>figure:hover>img{transform:scale(1.035)}.direction-links>a:hover{background:#ffffff04}}
+@media(max-width:700px){.hero-environment{inset:0;background-position:64% bottom;background-size:auto 730px}.main-nav a:after{bottom:9px;right:auto;width:25px}}
+@media(prefers-reduced-motion:reduce){.hero-environment{transform:none!important}.direction-links>a:after,.main-nav a:after,.direction-links .round-arrow,.hero-services a span,.button>span,.text-link>span,.material-photo>img,.team-block>figure>img{transition:none!important}.material-photo:hover>img,.team-block>figure:hover>img,.button:hover>span,.text-link:hover>span{transform:none}}
