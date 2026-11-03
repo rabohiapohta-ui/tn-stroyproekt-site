@@ -10,3 +10,27 @@
 @media(max-width:700px){.hero-copy{padding-top:26px}.hero-copy .eyebrow{margin-bottom:14px}.hero h1{font-size:42px;line-height:1.05}.hero-lead{margin-top:14px;line-height:1.6}.hero-actions{margin-top:18px}.hero-experience.hero .stage{height:350px;min-height:350px;margin-top:5px}.hero-experience.hero #viewport canvas{touch-action:pan-y pinch-zoom!important}.hero-experience.hero .stage-bottom{bottom:54px}.hero-experience.hero .model-tag{font-size:7px;top:12px}.model-reset{bottom:6px}.hero-experience.hero .model-poster img{object-fit:contain}}
 @media(max-width:370px){.hero h1{font-size:39px}.hero-experience.hero .stage{height:330px;min-height:330px}.hero-actions{gap:10px}}
 @media(max-width:370px){.contact-copy h2{font-size:36px}.catalogue-tabs{margin-right:-18px;padding-right:18px}}
+
+/* Company contact card — shared number, no personal contact names. */
+.contact-section{gap:48px;align-items:start}
+.contact-card{position:relative;overflow:hidden;padding:42px;border:1px solid #53687880;border-radius:18px;background:radial-gradient(ellipse at 100% 0,#b0683020,transparent 60%),linear-gradient(145deg,#1b2a37,#101d29);box-shadow:0 22px 70px #0002}
+.contact-card:before{content:"";position:absolute;left:42px;top:0;width:64px;height:3px;background:var(--orange)}
+.contact-card-brand{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:48px}
+.contact-card-brand img{object-fit:contain}.contact-card-brand>span{max-width:180px;text-align:right;font-size:9px;line-height:1.8;letter-spacing:.13em;color:#a7b5bf}
+.contact-card h2{font-size:clamp(34px,3.3vw,48px);line-height:1.14;letter-spacing:-.035em;margin:0}
+.contact-number{display:flex;flex-direction:column;gap:13px;margin:40px 0 28px}
+.contact-number>span{font-size:9px;letter-spacing:.2em;color:#aab7c0}
+.contact-number>a{font:500 clamp(22px,2.2vw,32px)/1.3 Manrope,sans-serif;letter-spacing:-.035em;color:#f5f3ec;text-decoration:none;white-space:nowrap}
+.contact-number>a:hover{color:#f7b780}
+.contact-card-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.contact-card-actions>a,.contact-card-actions>button{display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:58px;padding:15px 17px;background:#ffffff04;border:1px solid #81929e55;border-radius:8px;color:#edece6;text-decoration:none;font:500 14px Manrope,sans-serif}
+.contact-card-actions svg{color:#edac73;flex:none}.contact-card-actions>a:hover{background:#ffffff0b;border-color:#edac73}
+.contact-card-actions>button:disabled{opacity:1;cursor:default;color:#9eabb4}.contact-card-actions small{display:block;font-size:9px;color:#9eabb4;font-weight:400;margin-top:2px}
+.contact-card-actions>button:disabled svg{opacity:.35}
+.contact-card-bottom{margin-top:38px;padding-top:22px;border-top:1px solid #73849235;display:flex;align-items:center;gap:18px}
+.contact-card-bottom .geo{font-size:8px;line-height:1.8;letter-spacing:.11em}.contact-card-line{height:1px;background:#dc965c;flex:1;min-width:20px;max-width:42px;margin-left:auto}
+.contact-section .request-box{border-radius:18px}
+@media(max-width:1200px){.contact-section{gap:28px}.contact-card{padding:30px}.contact-card:before{left:30px}.contact-card-brand{gap:14px}.contact-number>a{font-size:clamp(21px,2.5vw,30px)}}
+@media(max-width:700px){.contact-card{padding:28px 24px}.contact-card:before{left:24px}.contact-card-brand{margin-bottom:34px}.contact-card h2{font-size:37px}.contact-number{margin-top:32px}.contact-number>a{font-size:clamp(23px,6.4vw,32px)}.contact-card-actions>a,.contact-card-actions>button{padding:13px;min-height:54px;font-size:13px}.contact-card-bottom{margin-top:28px}.contact-section .request-box{margin-top:22px}.contact-card-brand>span{font-size:8px}}
+
+.contact-email{display:flex;flex-direction:column;gap:9px;margin:-4px 0 28px;text-decoration:none;color:#f5f3ec}.contact-email>span{font-size:9px;letter-spacing:.16em;color:#aab7c0}.contact-email strong{font-size:clamp(17px,1.8vw,23px);font-weight:500;overflow-wrap:anywhere}.contact-email:hover strong{color:#f7b780}

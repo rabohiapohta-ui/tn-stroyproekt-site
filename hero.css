@@ -42,3 +42,6 @@
 @media(max-width:370px){.hero-copy{padding-inline:20px}.hero h1{font-size:36px}.hero-copy .eyebrow{font-size:7px}.hero-actions{gap:11px}.hero-actions .button{font-size:11px;gap:12px;padding-inline:13px}.hero-actions .text-link{font-size:10px}.hero-lead{font-size:11px}.hero-experience.hero .stage{height:330px;min-height:330px}.project-proof{padding-inline:20px;column-gap:10px}.project-proof>a:nth-child(even){padding-left:13px}.project-proof>a>strong{font-size:26px}.project-proof strong small{font-size:9px}}
 
 .hero-experience.hero .model-poster img{object-fit:contain}
+
+/* Joint markers are hidden; preserve the original viewer controls. */
+.hero-experience.hero .hotspots{display:none}

@@ -3,7 +3,7 @@ import { OrbitControls } from './vendor/addons/controls/OrbitControls.js';
 import { GLTFLoader } from './vendor/addons/loaders/GLTFLoader.js';
 import { RoomEnvironment } from './vendor/addons/environments/RoomEnvironment.js';
 import { createExcavatorRig } from './assets/excavator-rig.js';
-import { createDetailViewer } from './detail-view.js?v=cab4';
+import { createDetailViewer } from './detail-view.js?v=restore-20261103';
 import { createJointLoops } from './assets/joint-loops.js';
 import { initialView } from './initial-view.js?v=polish4';
 import { createDemoCycle } from './assets/demo-cycle.js?v=responsive1';
@@ -56,7 +56,7 @@ function triggerJoint(id){
   status.textContent=`${names[id]}: ${active?'движение повторяется · нажмите ещё раз, чтобы остановить':'движение остановлено'}`;
 }
 function updateHotspots(){
-  if(!model)return;
+  if(!model||hotspotLayer.hidden)return;
   const width=viewport.clientWidth,height=viewport.clientHeight;
   model.updateWorldMatrix(true,true);
   const placed=[];
@@ -106,7 +106,7 @@ try{
     for(const [id,anchor] of Object.entries(anchors)){anchor.object=model.getObjectByName(anchor.node);if(!anchor.object)throw new Error('Missing hotspot anchor: '+id);controls[id].disabled=false;}
     detailViewer=createDetailViewer({THREE,renderer,environment:scene.environment,gltf,mainOrbit:orbit,onOpen(){partTip.hidden=true;motion=null;cameraMotion=null;stopLoops();setActive(null);status.textContent='Движение на паузе · обзор детали';},onClose(){resize();needsRender=true;}});
     for(const button of document.querySelectorAll('[data-view]'))button.disabled=false;
-    hotspotLayer.hidden=false;needsRender=true;
+    hotspotLayer.hidden=true;needsRender=true;
     loading.hidden=true;play.disabled=false;document.getElementById('camera-reset').disabled=false;document.getElementById('pose-reset').disabled=false;syncLoops();resetCamera();updateHotspots();renderer.render(scene,camera);document.body.classList.add('ready');setTimeout(()=>{if(!awakened&&!detailViewer?.isOpen&&!reducedMotion.matches)toggleAll();},100);
     reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)stopLoops();});
     window.tnViewer={scene,model,camera,renderer,orbit,get playing(){return playing;},get loops(){return loops;},get demo(){return demo;},get rig(){return rig;},get motion(){return motion;},get activeJoint(){return activeJoint;},get details(){return detailViewer;}};
